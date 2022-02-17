@@ -24,10 +24,9 @@ with open(os.path.join(BASE_DIR, 'logiciel_secret.txt')) as f:
     SECRET_KEY = f.read().strip()
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
-# ['makingimpossiblepossible.com', 'www.makingimpossiblepossible.com']
+ALLOWED_HOSTS = ['makingimpossiblepossible.com', 'www.makingimpossiblepossible.com']
 
 
 # Application definition
@@ -144,29 +143,29 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
-STATICFILES_DIRS = [
-    BASE_DIR / "static",
-    'var/www/static',
-]
+# STATICFILES_DIRS = [
+#     BASE_DIR / "static",
+#     'var/www/static',
+# ]
 
 STATIC_URL = '/static/'
 
-#STATIC_ROOT = os.path.join(BASE_DIR, "static/")
+STATIC_ROOT = os.path.join(BASE_DIR, "static/")
 
 # Media files (images, videos)
 
 MEDIA_ROOT = BASE_DIR / 'uploads'
 MEDIA_URL = '/files/'
 
-# # HTTPS settings
-# SESSION_COOKIE_SECURE = True
-# CSRF_COOKIE_SECURE = True
-# SECURE_SSL_REDIRECT = True
+# HTTPS settings
+SESSION_COOKIE_SECURE = True
+CSRF_COOKIE_SECURE = True
+SECURE_SSL_REDIRECT = True
 
-# # HSTS settings
-# SECURE_HSTS_SECONDS = 31536000  # 1 year
-# SECURE_HSTS_PRELOAD =True
-# SECURE_HSTS_INCLUDE_SUBDOMAINS = True
+# HSTS settings
+SECURE_HSTS_SECONDS = 31536000  # 1 year
+SECURE_HSTS_PRELOAD =True
+SECURE_HSTS_INCLUDE_SUBDOMAINS = True
 
 # Django-MySql
 DJANGO_MYSQL_REWRITE_QUERIES = True

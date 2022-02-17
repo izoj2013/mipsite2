@@ -29,7 +29,7 @@ def is_valid_string(str_2_validate):
 
 def is_valid_email(email_addr: str):
     if is_valid_string(email_addr):
-        with open("acrsite/disposable_email_providers.txt", 'r') as f:
+        with open("mipsite/disposable_email_providers.txt", 'r') as f:
                 blacklist = f.read().splitlines()
 
         for disposable_email in blacklist:
